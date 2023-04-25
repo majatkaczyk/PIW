@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./script.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div class="hero-section">
+        <div class="header">
+            <div class="title">To do list</div>
+            <div class="menu-container">
+                <input type="text" id="list-input" placeholder="Enter item" onkeypress="addListElement(event)">
+                <button class="button" onclick="addElement()">Add</button>
+            </div>
+
+            <div class="list-section">
+                <details>
+                    <summary>Urgent list</summary>
+                    <ul id="first-list"></ul>
+                </details>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

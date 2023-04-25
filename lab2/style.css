@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --background: #659DBD;
+    --font: #E6DDC4;
+
+    --light-green: #9BA17B;
+    --dark-green: #61764B;
+    --light-brown: #BC986A;
+    --medium-brown: #5D483C;
+    --dark-brown: #3C2317;
+    --grey-brown: #4A3D37;
+
+
+    --outer-radius: 1rem;
+    --inner-radius: 0.25rem;
+    --inner-small-radius: 0.25rem;
+
+    --large-font-size: 2.125rem;
+    --medium-font-size: 1.125rem;
+    --small-font-size: 1rem;
+}
+
+* {
+    box-sizing: border-box;
+    background-color: var(--background);
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hero-section {
+    padding: 4vw 0 2vw 0;
+}
+
+.title {
+    font-size: var(--large-font-size);
+    font-weight: bold;
+    line-height: 2vw;
+    color: var(--font);
+    padding: 0vw 0 1.5vw 0;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    padding: 6vw;
+    border-radius: var(--outer-radius);
+
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: row;
+    padding: 0 0 1vw;
+    align-content: center;
+}
+
+input {
+    background: var(--light-green);
+    border: 3px solid var(--dark-green);
+    border-radius: var(--inner-radius);
+    font-size: var(--medium-font-size);
+    padding: 1rem;
+    margin-right: .5rem;
+}
+
+.button {
+    background: var(--light-green);
+    border: 3px solid var(--dark-green);
+    padding: 1rem 1.5rem;
+    border-radius: var(--inner-radius);
+    cursor: pointer;
+}
+
+.delete-button {
+    background: none;
+    border: none;
+    color: var(--font);
+    cursor: pointer;
+}
+
+.list-section {
+    display: flex;
+    flex-direction: column;
+}
+
+summary {
+    background: var(--light-brown);
+    border-radius: var(--inner-radius);
+    color: var(--medium-brown);
+    font-size: var(--medium-font-size);
+    line-height: 2rem;
+    padding: 1rem;
+    margin: 1rem;
+    width: 21rem;
+
+}
+
+details[open] summary {
+    margin-bottom: 0;
+}
+
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 1rem;
+    background-color: var(--medium-brown);
+    border-radius: var(--inner-radius);
+    color: var(--font);
+    width: 21rem;
+    margin-left: 1rem;
+    margin-bottom: .1rem;
+
+}
+
+ul li.checked {
+    background-color: var(--grey-brown);
+}
+
+ul li.checked .list-content {
+    text-decoration: line-through;
+}
+
+
+p {
+    font-size: var(--small-font-size);
+    color: var(--font);
+    text-align: left;
+    letter-spacing: 0.5px;
+    background: none;
+}
+
+.delete-item {
+    background: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 1rem;
+}
