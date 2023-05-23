@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "VILLAONE",
+        "rooms": "4",
+        "description": "Good villa",
+        "price": 1000000,
+        "address": "Krawiecka 5, 50-529 Wrocław",
+        "email": "JanJan@gmail.com",
+        "followed": false
+    },
+    {
+        "id": 2,
+        "name": "VILLATWO",
+        "rooms": "2",
+        "description": "Pretty good villa",
+        "price": 600000,
+        "address": "Piłsudskiego 40, 50-033 Wrocław",
+        "email": "PiotrPiotr@gmail.com",
+        "followed": false
+    },
+    {
+        "id": 3,
+        "name": "VILLATHREE",
+        "rooms": "3",
+        "description": "Not a good villa",
+        "price": 200000,
+        "address": "Stawowa 9, 50-018 Wrocław",
+        "email": "PiotrJan@gmail.com",
+        "followed": false
+    }
+]

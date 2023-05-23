@@ -1,36 +1,45 @@
 import { useState } from "react";
 import React from "react";
-import List from "../showList/List";
+import { useSelector, useDispatch } from "react-redux";
+import { findVilla } from "../../redux_files/basketSlice";
 
-const Search = ({ villas, option }) => {
+const Search = ({ option }) => {
     const [query, setQuery] = useState("");
+    const villas = useSelector((state) => state.basket.data);
+    const dispatch = useDispatch();
     let listOfVillasHtml = [];
 
-    switch (option) {
-        case "city":
-            listOfVillasHtml = villas
-                .filter(it => it.address.includes(query))
-                .map(it => <p>{it.name} {it.description} {it.address} {it.rooms}</p>);
-            break;
-        case "rooms":
-            listOfVillasHtml = villas
-                .filter(it => it.rooms.includes(query))
-                .map(it => <p>{it.name} {it.description} {it.address} {it.rooms}</p>);
-            break;
-        case "descr":
-            listOfVillasHtml = villas
-                .filter(it => it.description.includes(query))
-                .map(it => <p>{it.name} {it.description} {it.address} {it.rooms}</p>);
-            break;
-        default:
-            break;
-    }
+    const handleQueryChange = (e) => {
+        setQuery(e.target.value);
+        dispatch(findVilla({ option, query: e.target.value }));
+    };
+    console.log("villas ", villas)
 
+    const filteredVillas = villas.filter((villa) => {
+        switch (option) {
+            case "city":
+                return villa.address.includes(query);
+            case "rooms":
+                return villa.rooms.includes(query);
+            case "descr":
+                return villa.description.includes(query);
+            default:
+                return true;
+        }
+    })
+
+
+    listOfVillasHtml = filteredVillas.map((villa) => (
+        <p key={villa.id}>{villa.name} {villa.description} {villa.address} {villa.rooms}</p>
+    ))
     return (
-        <section >
-            <input value={query} onChange={e => { setQuery(e.target.value) }} />
+        <section>
+            <input value={query} onChange={handleQueryChange} />
             {listOfVillasHtml}
-        </section>)
+        </section>
+    );
 }
+
+
 
 export default Search;
