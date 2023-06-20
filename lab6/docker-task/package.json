@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "docker": "^0.2.14",
+    "flask": "^0.2.10"
+  }
+}
